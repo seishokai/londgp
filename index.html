@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lond × 清翔会｜特別優待プログラム</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f1;
+    --bg-soft:#f3ede2;
+    --panel:#ffffff;
+    --line:rgba(154,123,48,.24);
+    --gold:#9a7b30;
+    --gold-bright:#876521;
+    --gold-deco:#c4a364;
+    --gold-deep:#bda473;
+    --ink:#241f18;
+    --muted:#857a68;
+    --grad-gold:linear-gradient(135deg,#d4b878 0%,#b8924a 48%,#8a6c2c 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New",sans-serif;
+    font-weight:300;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%,rgba(196,163,100,.10),transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 100%,rgba(196,163,100,.07),transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 28px}
+  .serif{font-family:"Shippori Mincho",serif}
+  .latin{font-family:"Cormorant Garamond",serif;letter-spacing:.04em}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;position:relative;padding:80px 28px;
+  }
+  .hero-frame{
+    position:absolute;inset:26px;border:1px solid var(--line);pointer-events:none;
+  }
+  .hero-frame::before,.hero-frame::after{
+    content:"";position:absolute;width:14px;height:14px;border:1px solid var(--gold);
+  }
+  .hero-frame::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+  .hero-frame::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+  .eyebrow{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(15px,2.4vw,20px);
+    color:var(--gold);letter-spacing:.22em;margin-bottom:34px;opacity:0;animation:rise .9s .1s forwards;
+  }
+  .lockup{
+    display:flex;align-items:center;gap:clamp(18px,4vw,46px);margin-bottom:30px;
+    opacity:0;animation:rise 1s .25s forwards;
+  }
+  .lockup .brand{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(38px,9vw,86px);line-height:1;
+    background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .lockup .x{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:clamp(26px,5vw,46px);color:var(--muted)}
+  .lockup .brand.jp{font-family:"Shippori Mincho",serif;font-weight:600;font-size:clamp(30px,7vw,64px)}
+  .hero h1{
+    font-family:"Shippori Mincho",serif;font-weight:500;font-size:clamp(22px,4.4vw,40px);
+    letter-spacing:.06em;line-height:1.5;margin-bottom:22px;opacity:0;animation:rise 1s .45s forwards;color:var(--ink);
+  }
+  .hero p.lead{
+    max-width:620px;color:var(--muted);font-size:clamp(14px,2.2vw,16px);font-weight:300;
+    opacity:0;animation:rise 1s .6s forwards;
+  }
+  .scroll-cue{
+    position:absolute;bottom:42px;left:50%;transform:translateX(-50%);
+    font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--muted);font-size:13px;letter-spacing:.2em;
+    opacity:0;animation:rise 1s .9s forwards,float 2.6s 1.4s ease-in-out infinite;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  /* ---------- BENEFITS SECTION ---------- */
+  .benefits{padding:clamp(60px,9vw,110px) 0;border-top:1px solid var(--line)}
+  .sec-head{text-align:center;margin-bottom:clamp(46px,7vw,80px)}
+  .sec-head .num{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:18px;letter-spacing:.2em}
+  .sec-head h2{font-family:"Shippori Mincho",serif;font-weight:600;font-size:clamp(28px,5vw,46px);margin:10px 0 16px;letter-spacing:.04em;color:var(--ink)}
+  .sec-head .sub{color:var(--muted);font-size:14px;letter-spacing:.1em}
+
+  .card{
+    border:1px solid var(--line);background:var(--panel);
+    margin-bottom:34px;overflow:hidden;box-shadow:0 18px 50px -28px rgba(70,52,18,.28);
+    opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;
+  }
+  .card.in{opacity:1;transform:translateY(0)}
+  .card-top{padding:clamp(26px,4vw,42px) clamp(24px,4vw,48px) 0;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
+  .card-no{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,7vw,72px);line-height:.8;color:transparent;-webkit-text-stroke:1px var(--gold-deco);font-weight:600}
+  .card-title{font-family:"Shippori Mincho",serif;font-weight:600;font-size:clamp(22px,3.6vw,32px);letter-spacing:.04em;color:var(--ink)}
+  .card-en{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:15px;letter-spacing:.14em;margin-top:4px}
+  .badge{
+    display:inline-block;border:1px solid var(--gold);color:var(--gold);
+    font-size:12px;letter-spacing:.14em;padding:7px 16px;border-radius:30px;white-space:nowrap;
+  }
+  .card-body{padding:clamp(22px,3.5vw,36px) clamp(24px,4vw,48px) clamp(28px,4vw,44px)}
+  .card-lede{color:var(--muted);font-size:14.5px;margin-bottom:24px;max-width:680px}
+
+  /* tables */
+  .tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+  .tbl th{
+    font-family:"Zen Kaku Gothic New",sans-serif;font-weight:500;text-align:left;
+    color:var(--gold);border-bottom:1px solid var(--line);padding:13px 14px;letter-spacing:.04em;
+    font-size:12.5px;white-space:nowrap;
+  }
+  .tbl td{padding:14px 14px;border-bottom:1px solid rgba(70,52,18,.08);color:var(--ink);vertical-align:middle}
+  .tbl tr:last-child td{border-bottom:none}
+  .tbl .name{font-weight:400}
+  .tbl .detail{display:block;color:var(--muted);font-size:11.5px;font-weight:300;margin-top:2px}
+  .tbl td.r{text-align:right;font-variant-numeric:tabular-nums}
+  .tbl th.r{text-align:right}
+  .price-old{color:var(--muted);text-decoration:line-through;font-size:12px}
+  .price-new{color:var(--gold-bright);font-weight:600}
+  .off{
+    display:inline-block;background:var(--grad-gold);color:#fff;font-weight:700;font-size:11px;
+    padding:2px 9px;border-radius:4px;letter-spacing:.03em;
+  }
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tbl-scroll::-webkit-scrollbar{height:6px}
+  .tbl-scroll::-webkit-scrollbar-thumb{background:var(--gold-deco);border-radius:3px}
+
+  .hilite{
+    background:linear-gradient(135deg,rgba(196,163,100,.16),rgba(196,163,100,.04));
+    border:1px solid var(--line);border-left:3px solid var(--gold);
+    padding:16px 20px;margin-top:22px;font-size:13.5px;color:var(--ink);
+  }
+  .hilite b{color:var(--gold-bright);font-weight:600}
+  .notes{margin-top:20px;font-size:11.5px;color:var(--muted);line-height:1.75}
+  .notes p{margin-bottom:5px;padding-left:14px;position:relative}
+  .notes p::before{content:"※";position:absolute;left:0;color:var(--gold-deco)}
+
+  /* ---------- BONUS ---------- */
+  .bonus{
+    border:1px solid var(--line);background:var(--bg-soft);
+    padding:clamp(28px,4vw,44px);margin-top:14px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center
+  }
+  .bonus h3{font-family:"Shippori Mincho",serif;font-weight:600;font-size:22px;margin-bottom:6px;color:var(--ink)}
+  .bonus .en{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);letter-spacing:.12em;margin-bottom:14px}
+  .bonus p{color:var(--muted);font-size:13.5px}
+  .bonus .pricebox{text-align:right;white-space:nowrap}
+  .bonus .pricebox .old{color:var(--muted);text-decoration:line-through;font-size:13px}
+  .bonus .pricebox .new{font-family:"Shippori Mincho",serif;color:var(--gold-bright);font-size:clamp(26px,4vw,34px);font-weight:600}
+
+  /* ---------- LOCATIONS ---------- */
+  .loc{padding:clamp(60px,9vw,110px) 0;border-top:1px solid var(--line)}
+  .loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+  .loc-cell{background:var(--panel);padding:22px 22px;transition:background .4s}
+  .loc-cell:hover{background:var(--bg-soft)}
+  .loc-cell .area{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:13px;letter-spacing:.12em;margin-bottom:8px}
+  .loc-cell .cname{font-family:"Shippori Mincho",serif;font-size:15px;font-weight:500;margin-bottom:6px;line-height:1.45;color:var(--ink)}
+  .loc-cell .addr{color:var(--muted);font-size:11.5px;line-height:1.6}
+
+  /* ---------- HOW / CTA ---------- */
+  .cta{padding:clamp(70px,11vw,130px) 0;text-align:center;border-top:1px solid var(--line);position:relative}
+  .cta .steps{display:flex;justify-content:center;gap:clamp(20px,5vw,60px);flex-wrap:wrap;margin:42px 0 50px}
+  .step{max-width:200px}
+  .step .sn{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:34px;margin-bottom:10px}
+  .step h4{font-family:"Shippori Mincho",serif;font-weight:600;font-size:16px;margin-bottom:8px;color:var(--ink)}
+  .step p{color:var(--muted);font-size:13px}
+  .keyphrase{
+    display:inline-block;border:1px solid var(--gold);padding:18px 34px;margin-top:6px;border-radius:4px;
+    background:linear-gradient(135deg,rgba(196,163,100,.12),transparent);
+  }
+  .keyphrase .latin{display:block;color:var(--gold);font-style:italic;font-size:13px;letter-spacing:.18em;margin-bottom:8px}
+  .keyphrase .ph{font-family:"Shippori Mincho",serif;font-size:clamp(18px,3.4vw,26px);color:var(--ink);letter-spacing:.05em}
+  .keyphrase .ph b{color:var(--gold-bright)}
+
+  .book-btn{
+    display:inline-flex;align-items:center;gap:11px;margin-top:36px;
+    font-family:"Shippori Mincho",serif;font-size:16px;letter-spacing:.08em;font-weight:600;
+    padding:19px 50px;border-radius:44px;text-decoration:none;
+    background:var(--grad-gold);color:#fff;
+    box-shadow:0 16px 36px -14px rgba(138,108,44,.65);transition:transform .3s,box-shadow .3s;
+  }
+  .book-btn:hover{transform:translateY(-3px);box-shadow:0 22px 44px -14px rgba(138,108,44,.7)}
+  .book-btn .arw{transition:transform .3s}
+  .book-btn:hover .arw{transform:translateX(6px)}
+
+  footer{padding:50px 0 60px;text-align:center;border-top:1px solid var(--line);color:var(--muted)}
+  footer .fl{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:24px;letter-spacing:.1em;margin-bottom:12px}
+  footer .tag{color:var(--ink);font-family:"Shippori Mincho",serif;letter-spacing:.08em}
+  footer small{font-size:11px;letter-spacing:.08em;display:block;margin-top:14px;opacity:.8}
+
+  @media(max-width:720px){
+    .bonus{grid-template-columns:1fr}
+    .bonus .pricebox{text-align:left}
+    .card-no{font-size:48px}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-frame"></div>
+  <div class="eyebrow">Exclusive Partnership Program</div>
+  <div class="lockup">
+    <span class="brand latin">Lond</span>
+    <span class="x latin">×</span>
+    <span class="brand jp">清翔会</span>
+  </div>
+  <h1>髪から、口元まで。</h1>
+  <p class="lead">Lond × 清翔会の業務提携。Londグループの皆様限定の、矯正・審美の特別優待プログラムです。</p>
+  <div class="scroll-cue">scroll ↓</div>
+</header>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num latin">Four Privileges</div>
+      <h2>Londグループ様 限定優待</h2>
+      <div class="sub">対象：Londグループ 全店スタッフの皆様</div>
+    </div>
+
+    <!-- 01 矯正装置割引 -->
+    <article class="card">
+      <div class="card-top">
+        <div class="card-no latin">01</div>
+        <div style="flex:1">
+          <div class="card-title">矯正装置 割引</div>
+          <div class="card-en latin">Orthodontic Appliances</div>
+        </div>
+        <span class="badge">装置代 10% OFF</span>
+      </div>
+      <div class="card-body">
+        <p class="card-lede">表側・裏側・マウスピース矯正まで、各種矯正装置の装置代を <b style="color:var(--gold-bright)">通常価格より10%割引</b> でご提供します。下記は各院の定価（税込）です。</p>
+        <div class="tbl-scroll">
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>装置の種類</th>
+              <th class="r">名駅エリア</th>
+              <th class="r">BF銀座</th>
+              <th class="r">京都河原町</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">表側矯正<span class="detail">ラディアンス《両顎》</span></td><td class="r">¥550,000</td><td class="r">¥715,000</td><td class="r">¥660,000</td></tr>
+            <tr><td class="name">裏側矯正（フル）<span class="detail">フルリンガル《両顎》</span></td><td class="r">¥990,000</td><td class="r">¥1,210,000</td><td class="r">¥1,210,000</td></tr>
+            <tr><td class="name">裏側矯正（ハーフ）<span class="detail">ハーフリンガル《両顎》</span></td><td class="r">¥858,000</td><td class="r">¥1,023,000</td><td class="r">¥935,000</td></tr>
+            <tr><td class="name">マウスピース矯正<span class="detail">インビザライン Full《両顎》</span></td><td class="r">¥660,000</td><td class="r">¥825,000</td><td class="r">¥770,000</td></tr>
+            <tr><td class="name">スピード矯正<span class="detail">オルソパルス</span></td><td class="r">¥220,000</td><td class="r">¥220,000</td><td class="r">¥220,000</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="hilite">Londグループ様は、上記の <b>装置代より一律10% OFF</b> でご利用いただけます。</div>
+        <div class="notes"><p>表示は税込定価です。名駅エリア＝エスカ／アール／ウィズ各院。</p></div>
+      </div>
+    </article>
+
+    <!-- 02 ブラックアライナー -->
+    <article class="card">
+      <div class="card-top">
+        <div class="card-no latin">02</div>
+        <div style="flex:1">
+          <div class="card-title">ブラックアライナー</div>
+          <div class="card-en latin">Black Aligner — Subscription</div>
+        </div>
+        <span class="badge">装置代 10% OFF</span>
+      </div>
+      <div class="card-body">
+        <p class="card-lede">ウィズ歯科限定の<b style="color:var(--gold-bright)">定額制マウスピース矯正</b>。月々のお支払いで、自分のペースで歯並びを整えられます。Londグループ様は装置代をさらに10%割引。</p>
+        <div class="tbl-scroll">
+        <table class="tbl">
+          <thead>
+            <tr><th>プラン</th><th class="r">片顎（税込）</th><th class="r">両顎（税込）</th><th>備考</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">01. 精密検査<span class="detail">3Dスキャン・シミュレーション・治療計画</span></td><td class="r">—</td><td class="r price-new">¥33,000</td><td style="color:var(--muted);font-size:12px">最短当日に結果お渡し</td></tr>
+            <tr><td class="name">02. 都度払いプラン<span class="detail">1回ごとにお支払い・自分のペースで</span></td><td class="r">¥27,500</td><td class="r">¥38,500</td><td style="color:var(--muted);font-size:12px">必要な回数だけ</td></tr>
+            <tr><td class="name">03. 10回コース<span class="detail">軽度〜中等度の改善向け</span></td><td class="r">¥220,000</td><td class="r">¥330,000</td><td style="color:var(--muted);font-size:12px">月々 ¥3,180〜（最大120回）</td></tr>
+            <tr><td class="name">04. 20回コース<span class="detail">本格的にしっかり治したい方向け</span></td><td class="r">¥385,000</td><td class="r">¥495,000</td><td style="color:var(--muted);font-size:12px">月々 ¥3,990〜（最大120回）</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="hilite">Londグループ様は <b>装置代より10% OFF</b>。定額制コースには診察・調整料、リテーナー代、再スキャン料、保定期間サポートが含まれます。</div>
+        <div class="notes">
+          <p>精密検査料として検査時に33,000円を頂きます。</p>
+          <p>1回の調整・通院費 5,500円〜11,000円（ワイヤー矯正：毎月1回／マウスピース：2〜3か月に1回）。</p>
+          <p>モニターのご協力をお願いする場合があります。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 ブラックフィルム -->
+    <article class="card">
+      <div class="card-top">
+        <div class="card-no latin">03</div>
+        <div style="flex:1">
+          <div class="card-title">ブラックフィルム 割引</div>
+          <div class="card-en latin">Black Film — Laminate Veneer</div>
+        </div>
+        <span class="badge">最大 44% OFF</span>
+      </div>
+      <div class="card-body">
+        <p class="card-lede">理想の白く美しい歯並びを叶えるラミネートベニア「Black Film」。Londグループ様だけの<b style="color:var(--gold-bright)">特別モニター価格</b>で、全顔モニターとしてご提供します。</p>
+        <div class="tbl-scroll">
+        <table class="tbl">
+          <thead>
+            <tr><th>本数</th><th class="r">通常価格（税抜）</th><th class="r">Lond特別（税抜）</th><th class="r">Lond特別（税込）</th><th class="r">割引</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">20本</td><td class="r price-old">¥5,000,000</td><td class="r price-new">¥2,800,000</td><td class="r">¥3,080,000</td><td class="r"><span class="off">44% OFF</span></td></tr>
+            <tr><td class="name">18本</td><td class="r price-old">¥4,500,000</td><td class="r price-new">¥2,520,000</td><td class="r">¥2,772,000</td><td class="r"><span class="off">44% OFF</span></td></tr>
+            <tr><td class="name">16本</td><td class="r price-old">¥4,000,000</td><td class="r price-new">¥2,240,000</td><td class="r">¥2,464,000</td><td class="r"><span class="off">44% OFF</span></td></tr>
+            <tr><td class="name">14本</td><td class="r price-old">¥3,500,000</td><td class="r price-new">¥1,960,000</td><td class="r">¥2,156,000</td><td class="r"><span class="off">44% OFF</span></td></tr>
+            <tr><td class="name">12本</td><td class="r price-old">¥3,000,000</td><td class="r price-new">¥1,800,000</td><td class="r">¥1,980,000</td><td class="r"><span class="off">40% OFF</span></td></tr>
+            <tr><td class="name">10本</td><td class="r price-old">¥2,500,000</td><td class="r price-new">¥1,500,000</td><td class="r">¥1,650,000</td><td class="r"><span class="off">40% OFF</span></td></tr>
+            <tr><td class="name">8本</td><td class="r price-old">¥2,000,000</td><td class="r price-new">¥1,200,000</td><td class="r">¥1,320,000</td><td class="r"><span class="off">40% OFF</span></td></tr>
+            <tr><td class="name">6本</td><td class="r price-old">¥1,500,000</td><td class="r price-new">¥960,000</td><td class="r">¥1,056,000</td><td class="r"><span class="off">36% OFF</span></td></tr>
+            <tr><td class="name">4本</td><td class="r price-old">¥1,000,000</td><td class="r price-new">¥640,000</td><td class="r">¥704,000</td><td class="r"><span class="off">36% OFF</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="hilite">あの <b>ヒカルさん</b> も施術。ヒカルさんでも1本15万円のところ、<b>Londグループ様は1本140,000円〜</b>と圧倒的な特別価格です。</div>
+        <div class="notes">
+          <p>すべて全顔モニター価格となります。価格は税抜が基準（税込併記）。</p>
+          <p>本価格はLondグループ様限定の特別モニター価格です。他言はご遠慮ください。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 ラブリエ -->
+    <article class="card">
+      <div class="card-top">
+        <div class="card-no latin">04</div>
+        <div style="flex:1">
+          <div class="card-title">ラブリエ 割引</div>
+          <div class="card-en latin">Lovelier</div>
+        </div>
+        <span class="badge">通常価格 10% OFF</span>
+      </div>
+      <div class="card-body">
+        <p class="card-lede">ナチュラルな美しさを叶えるラミネートベニア「ラブリエ」。Londグループ様は<b style="color:var(--gold-bright)">通常価格より一律10%OFF</b>でご利用いただけます。</p>
+        <div class="tbl-scroll">
+        <table class="tbl">
+          <thead>
+            <tr><th>本数</th><th class="r">通常価格（税込）</th><th class="r">Londグループ価格（税込）</th><th class="r">割引</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="name">2本</td><td class="r price-old">¥264,000</td><td class="r price-new">¥237,600</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">4本</td><td class="r price-old">¥528,000</td><td class="r price-new">¥475,200</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">6本</td><td class="r price-old">¥792,000</td><td class="r price-new">¥712,800</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">8本</td><td class="r price-old">¥1,056,000</td><td class="r price-new">¥950,400</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">10本</td><td class="r price-old">¥1,320,000</td><td class="r price-new">¥1,188,000</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">12本</td><td class="r price-old">¥1,584,000</td><td class="r price-new">¥1,425,600</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">14本</td><td class="r price-old">¥1,848,000</td><td class="r price-new">¥1,663,200</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">16本</td><td class="r price-old">¥2,112,000</td><td class="r price-new">¥1,900,800</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">18本</td><td class="r price-old">¥2,376,000</td><td class="r price-new">¥2,138,400</td><td class="r"><span class="off">10% OFF</span></td></tr>
+            <tr><td class="name">20本</td><td class="r price-old">¥2,640,000</td><td class="r price-new">¥2,376,000</td><td class="r"><span class="off">10% OFF</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="hilite">通常単価1本132,000円のところ、<b>Londグループ様は10%OFF</b>。さらに症例写真・動画にご協力いただけるモニタープラン（鼻下／顔）をご利用の場合、追加割引が適用されます。</div>
+        <div class="notes">
+          <p>表示は税込価格です。</p>
+          <p>モニタープラン：鼻下モニター（最大17.5%OFF）／顔モニター（最大34.17%OFF）も別途ご用意。撮影内容はHP・SNS・広告等に掲載させていただきます。</p>
+          <p>デンタルローン（10年・想定金利3.7%）をご利用いただけます。金利は審査により変動します。</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- BONUS: Whitening -->
+    <div class="bonus">
+      <div>
+        <h3>＋ ホームホワイトニング</h3>
+        <div class="en latin">Bonus — Home Whitening</div>
+        <p>マウスピース制作（上下）＋ホワイトニング液剤。Londグループ社員割引価格でご提供。<br>平日限定のご予約となります。虫歯がある場合は保険診療での治療が先に必要です。</p>
+      </div>
+      <div class="pricebox">
+        <div class="old">通常 ¥30,800（税込）</div>
+        <div class="new">¥11,000<span style="font-size:14px;color:var(--muted)"> 税込</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="loc">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="num latin">Our Clinics</div>
+      <h2>対象クリニック</h2>
+      <div class="sub">愛知・東京・三重・京都の清翔会グループ各院</div>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-cell"><div class="area latin">Nagoya Sta.</div><div class="cname">名駅アール歯科・矯正歯科</div><div class="addr">名古屋市中村区名駅四丁目10-25 名駅IMAIビル11階</div></div>
+      <div class="loc-cell"><div class="area latin">Nagoya Sta.</div><div class="cname">名古屋ウィズ歯科・矯正歯科</div><div class="addr">名古屋市中村区名駅2-44-2 オーキッドGビル2階</div></div>
+      <div class="loc-cell"><div class="area latin">Nagoya Sta.</div><div class="cname">エスカ歯科・矯正歯科</div><div class="addr">名古屋市中村区椿町6-9先 エスカ地下街</div></div>
+      <div class="loc-cell"><div class="area latin">Nagoya</div><div class="cname">名古屋ルミナス歯科・矯正歯科</div><div class="addr">名古屋市中川区五月通2-37 黄金ステーションビル2階</div></div>
+      <div class="loc-cell"><div class="area latin">Nagoya</div><div class="cname">名古屋茶屋歯科・矯正歯科</div><div class="addr">名古屋市港区西茶屋2-11 イオンモール名古屋茶屋1階</div></div>
+      <div class="loc-cell"><div class="area latin">Komaki</div><div class="cname">ワイズ歯科矯正歯科＋KIDS イオン小牧店</div><div class="addr">小牧市東1-126 イオン小牧店1階</div></div>
+      <div class="loc-cell"><div class="area latin">Chiryu</div><div class="cname">アピタ知立ファミリー歯科・矯正歯科</div><div class="addr">知立市長篠町大山18-1 ギャラリエアピタ知立店2階</div></div>
+      <div class="loc-cell"><div class="area latin">Nagoya</div><div class="cname">名古屋やごと歯科・矯正歯科 イオン八事店</div><div class="addr">名古屋市昭和区広路町石坂2-1 イオン八事店4階</div></div>
+      <div class="loc-cell"><div class="area latin">Mie</div><div class="cname">岩田歯科医院</div><div class="addr">三重県員弁郡東員町大木1948-1</div></div>
+      <div class="loc-cell"><div class="area latin">Tokyo</div><div class="cname">BF銀座歯科・矯正歯科</div><div class="addr">中央区銀座7-13-12 サクセス銀座7ビル2階</div></div>
+      <div class="loc-cell"><div class="area latin">Tokyo</div><div class="cname">大森駅ファミリー歯科・矯正歯科</div><div class="addr">大田区山王1-7-4 ミュージションプラス大森山王1階</div></div>
+      <div class="loc-cell"><div class="area latin">Kyoto</div><div class="cname">京都河原町スマイルデザイン歯科・矯正歯科</div><div class="addr">京都市中京区河原町通三条下る2丁目山崎町258 AD-G四条河原町6階</div></div>
+      <div class="loc-cell"><div class="area latin">Coming 2026</div><div class="cname">BF中日ビル歯科・矯正歯科</div><div class="addr">名古屋市中区栄4-1-1 中日ビル4階（2026年7・8月予定）</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW / CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:0">
+      <div class="num latin">How to Use</div>
+      <h2>ご利用方法</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="sn latin">i</div><h4>ご予約</h4><p>各院へ電話・WEBよりご予約ください。</p></div>
+      <div class="step"><div class="sn latin">ii</div><h4>お伝えください</h4><p>予約時に「Londグループです」と必ずお伝えください。</p></div>
+      <div class="step"><div class="sn latin">iii</div><h4>優待でご来院</h4><p>特別優待価格で施術を受けられます。</p></div>
+    </div>
+    <div class="keyphrase">
+      <span class="latin">at the time of booking</span>
+      <span class="ph">「<b>Londグループ</b>です」とお伝えください</span>
+    </div>
+    <div>
+      <a class="book-btn" href="https://reserve.shareconnect.co.jp/?r=6uixnv&treatment_ids=1766627335021%2C1766627271947%2C1766627284554%2C1767579807369%2C1766641212044%2C1773880672347" target="_blank" rel="noopener">オンラインで予約する <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fl latin">Lond × 清翔会</div>
+  <div class="tag">美しさは、細部に宿る。</div>
+  <small>医療法人清翔会 × Lond Group ｜ Exclusive Partnership Program<br>本優待はLondグループ様限定です。内容は予告なく変更となる場合があります。</small>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  document.querySelectorAll('.card').forEach(c=>io.observe(c));
+</script>
+</body>
+</html>
