@@ -159,10 +159,26 @@
   footer .tag{color:var(--fg);font-family:"Shippori Mincho",serif;letter-spacing:.08em}
   footer small{font-size:11px;letter-spacing:.08em;display:block;margin-top:14px;opacity:.85}
 
+  /* ===== STICKY RESERVE BUTTON (always visible) ===== */
+  body{padding-bottom:92px}
+  .sticky-book{position:fixed;z-index:60;left:50%;bottom:18px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:10px;font-family:"Shippori Mincho",serif;font-weight:600;font-size:15px;letter-spacing:.06em;padding:15px 34px;border-radius:46px;text-decoration:none;background:var(--grad-gold);color:#fff;box-shadow:0 14px 36px -10px rgba(138,108,44,.7);transition:transform .25s,box-shadow .25s}
+  .sticky-book:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 20px 46px -10px rgba(138,108,44,.82)}
+  .sticky-book .arw{transition:transform .3s}
+  .sticky-book:hover .arw{transform:translateX(5px)}
+
   @media(max-width:720px){
-    .bonus{grid-template-columns:1fr}
-    .bonus .pricebox{text-align:left}
+    .wrap{padding:0 18px}
     .card-no{font-size:50px}
+    .tbl{font-size:12px}
+    .tbl th{padding:10px 8px;font-size:11.5px}
+    .tbl td{padding:10px 8px}
+    .tbl .detail{font-size:10.5px}
+    .tbl .rem{font-size:11px}
+    .wh-price{flex-direction:column;align-items:flex-start;gap:14px;padding:22px 20px}
+    .wh-price .right{width:100%;justify-content:space-between;gap:12px}
+    .wh-price .new{font-size:clamp(38px,12vw,52px)}
+    .sticky-book{left:12px;right:12px;transform:none;justify-content:center;bottom:12px;padding:16px;font-size:16px;border-radius:14px}
+    .sticky-book:hover{transform:none}
   }
 </style>
 </head>
@@ -461,6 +477,8 @@
     </div>
   </div>
 </section>
+
+<a class="sticky-book" href="https://reserve.shareconnect.co.jp/?r=6uixnv&treatment_ids=1766627335021%2C1766627271947%2C1766627284554%2C1767579807369%2C1766641212044%2C1773880672347" target="_blank" rel="noopener">オンラインで予約する <span class="arw">→</span></a>
 
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
